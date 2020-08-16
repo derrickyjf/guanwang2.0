@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="save" content="history" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="blank" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="js/zepto.min.js" type="text/javascript"></script>
+    <script src="js/jquery-2.1.4.js"></script>
+	<script type="text/javascript">
+try{
+    if (/Android|webOS|iPhone|iPad|BlackBerry/i.test(navigator.userAgent)) {
+
+    }else{
+        window.location.href="index.html";
+    }
+}catch(e){}
+</script>
+
+    <title>爱兜APP</title>
+    <style>
+        html {
+            font-size: 312.5%;
+        }
+        .icon-img{
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+            margin-left: 30px;
+        }
+        .down-link{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        .down-link a{
+            width: 200px;
+            margin: 5px 0;
+            display: flex !important;
+            align-items: center;
+            /*justify-content: center;*/
+        }
+        .s_middle{
+            top: 42% !important;
+        }
+    </style>
+    <link type="text/css" rel="stylesheet" href="css/styles.css?v=20170616" />
+    <script>
+        $(document).ready(function(){
+            init_rem();
+        });
+
+        function init_rem(){
+            var iw = 750;
+            var w = window.innerWidth;
+            if(w>750){
+                w = 750;
+            }
+            var irate= 625/(iw/w);
+            var str = 'html{font-size:' + irate + '%' + '}';
+            var h_style = document.createElement("style");
+            h_style.setAttribute("type", "text/css");
+            h_style.innerHTML = str;
+            document.getElementsByTagName('head')[0].appendChild(h_style);
+        }
+    </script>
+</head>
+<body>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <div><img class="swiper-bg"></div>
+			<img src="images/background0703.png" class="backgroundimage" />
+<!--           <div class="s_middle">
+                <div class="down-logo">
+                    <span class="logo-img"><img src="images/app_logo.png"/></span>
+                    <div class="logo-txt">
+                        <h6 style="font-size:0.5rem;">iDeal爱兜</h6>
+                    </div>
+                </div>
+                <div class="down-img"><img src="images/ideal.png"/></div>
+
+            </div> -->
+        </div>
+    </div>
+    <div class="app-fixed">
+        <div class="down-lun"><div class="swiper-pagination"></div></div>
+        <div class="down-link tc">
+            <a href="https://apps.apple.com/us/app/ideal%E7%88%B1%E5%85%9C/id1511598159" class="openApp"><img src="./images/iPhone.png" class="icon-img"><span>App Store</span></a>
+            
+            <a href="https://play.google.com/store/apps/details?id=uni.UNI6849AE0" class="openApp"><img src="./images/Google.png" class="icon-img"><span>Google Play</span></a>
+            
+            <!--<a href="./ideal111.apk"  class="ios_download_url"><img src="./images/Android.png" class="icon-img"><span>安卓直接下载</span></a><!-- 下载的链接在下方use browser to open -->-->
+
+            <a href="https://appstore.huawei.com/app/C102154459" class="openApp"><img src="./images/huawei.png" class="icon-img"><span>华为应用商城</span></a>
+		</div>
+    </div>
+</div>
+<script src="js/jquery-weui.min.js"></script>
+<script src="js/swiper.min.js"></script>
+<script>
+    //轮播
+    $(".swiper-container").swiper({
+        loop: false,
+        autoplayDisableOnInteraction : false
+    });
+    window.onload=function(){
+	    var download_url = "";//无需填写
+        $('.app_url').attr('href', download_url);
+                                    var ios_download_url = "http://bbs.52jscn.com;//点击下载进入链接
+                $('.ios_download_url').attr('href', ios_download_url)
+                            if($(document).height()<470)
+        {
+            $(".down-img").css("margin-top",".24rem");
+            $(".down-txt").css("margin-top",".3rem");
+            $(".app-fixed").css("bottom",".2rem");
+            $(".s_middle").css("padding-bottom",".8rem");
+            $(".down-link").css("margin-top","2px");
+        }
+    }
+    //屏幕的高度
+//    $(document).ready(function(e) {
+//        $(".swiper-container").height(window.innerHeight);
+//
+//    });
+                    var app_name = "dalianshenghuowang";
+        var id = "0";
+        var url = "";
+//        var src = app_name + "://startapp";
+                var src = app_name + "://startapp";
+                $('.openApp').click(function () {
+            window.location.href = src;
+        })
+    </script>
+</body>
+</html>
+<div style="display: none">
+    </div>
+
